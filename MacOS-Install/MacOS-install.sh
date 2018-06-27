@@ -93,7 +93,7 @@ chmod +x rc-compliance.sh
 
 ##### Create VPN connect script #####
 cd ~/workspace
-echo "sudo openconnect --authgroup ###update this value with authgroup### --script=~/vpnc-script-split-traffic.sh   ###update this value with connect info###   --servercert sha256:cca84f3585f647d4507276d3b714fb3868ed1bd27e33b6535652fd915818d34c" > connect-ceif-test.sh
+echo "sudo openconnect --authgroup ###update this value with authgroup### --script=~/vpnc-script-split-traffic.sh   ###update this value with connect info###   --servercert sha256:cca84f3585f647d4507276d3b714fb3868ed1bd27e33b6535652fd915818d34c" > connect-ceif.sh
 chmod +x connect-ceif.sh
 
 ##### Create VPN tunnel script #####
