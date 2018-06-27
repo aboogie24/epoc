@@ -7,6 +7,7 @@ brew install minio/stable/mc
 brew install cloudfoundry/tap/credhub-cli
 brew install cloudfoundry/tap/bosh-cli
 brew install cloudfoundry/tap/cf-cli
+brew install homebrew/cask/powershell
 brew install mas
 mas install 715768417 803453959
 gem install cf-uaac
@@ -68,22 +69,17 @@ then
     blueutil --power 1
     networksetup -setairportpower en0 on
 
-    sudo chmod a+r /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/VDC.plugin/Contents/MacOS/VDC
-    sudo chmod a+r /System/Library/PrivateFrameworks/CoreMediaIOServicesPrivate.framework/Versions/A/Resources/AVC.plugin/Contents/MacOS/AVC
-    #sudo chmod a+r /System/Library/QuickTime/QuickTimeUSBVDCDigitizer.component/Contents/MacOS/QuickTimeUSBVDCDigitizer
-    sudo chmod a+r /Library/CoreMediaIO/Plug-Ins/DAL/AppleCamera.plugin/Contents/MacOS/AppleCamera
-    sudo chmod a+r /Library/CoreMediaIO/Plug-Ins/FCP-DAL/AppleCamera.plugin/Contents/MacOS/AppleCamera
+    /usr/bin/profiles remove -identifier mil.disa.STIG.Application_Restrictions.alacarte
+    /usr/bin/profiles remove -identifier mil.disa.STIG.Restrictions.alacarte
 
     sudo osascript -e "set volume input volume 50" 
 elif [ "$1" == "disable" ]
 then
     blueutil --power 0
     networksetup -setairportpower en0 off
-    sudo chmod a-r /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/VDC.plugin/Contents/MacOS/VDC
-    sudo chmod a-r /System/Library/PrivateFrameworks/CoreMediaIOServicesPrivate.framework/Versions/A/Resources/AVC.plugin/Contents/MacOS/AVC
-    #sudo chmod a-r /System/Library/QuickTime/QuickTimeUSBVDCDigitizer.component/Contents/MacOS/QuickTimeUSBVDCDigitizer
-    sudo chmod a-r /Library/CoreMediaIO/Plug-Ins/DAL/AppleCamera.plugin/Contents/MacOS/AppleCamera
-    sudo chmod a-r /Library/CoreMediaIO/Plug-Ins/FCP-DAL/AppleCamera.plugin/Contents/MacOS/AppleCamera
+
+    /usr/bin/profiles install -path ~/workspace/epoc/MacOS-Install/U_Apple_OS_X_10-12_V1R3_Mobile_Configuration_Files/U_Apple_OS_X_10-12_V1R3_STIG_Application_Restrictions_Policy.mobileconfig
+    /usr/bin/profiles install -path ~/workspace/epoc/MacOS-Install/U_Apple_OS_X_10-12_V1R3_Mobile_Configuration_Files/U_Apple_OS_X_10-12_V1R3_STIG_Restrictions_Policy.mobileconfig    
 
     sudo osascript -e "set volume input volume 0" 
 else
@@ -123,6 +119,9 @@ add_ip 192.168.0.0 255.255.0.0 16		#Platform
 
 # End of script' > vpnc-script-split-traffic.sh
 chmod +x vpnc-script-split-traffic.sh
+
+# Move epoc directory into the workspace
+mv epoc ~/workspace
 
 # Create admin 911 account #
 sudo dscl . -create /Users/admin911
