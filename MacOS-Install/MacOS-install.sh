@@ -121,7 +121,7 @@ add_ip 192.168.0.0 255.255.0.0 16		#Platform
 chmod +x vpnc-script-split-traffic.sh
 
 # Move epoc directory into the workspace
-mv ~/epoc ~/workspace
+mv ~/epoc ~/workspace/
 
 # Create admin 911 account #
 sudo dscl . -create /Users/admin911
