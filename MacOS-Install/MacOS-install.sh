@@ -1,3 +1,7 @@
+VPN_AUTH_GROUP=###CHANGEME###
+VPN_AUTH_CONNECT=###CHANGEME###
+ADMIN911_PW=###CHANGEME###
+
 # install homebrew #
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -15,7 +19,7 @@ gem install cf-uaac
 # install zoom #
 cd ~/Downloads
 curl -L --remote-name https://zoom.us/client/latest/zoomusInstaller.pkg
-sudo installer -pkg zoomusInstall.pkg -target /
+sudo installer -pkg zoomusInstaller.pkg -target /
 
 #om-darwin
 cd ~/Downloads
@@ -89,7 +93,7 @@ chmod +x rc-compliance.sh
 
 ##### Create VPN connect script #####
 cd ~/workspace
-echo "sudo openconnect --authgroup ###update this value with authgroup### --script=~/vpnc-script-split-traffic.sh   ###update this value with connect info###   --servercert sha256:cca84f3585f647d4507276d3b714fb3868ed1bd27e33b6535652fd915818d34c" > connect-ceif.sh
+echo "sudo openconnect --authgroup $VPN_AUTH_GROUP --script=~/vpnc-script-split-traffic.sh   $VPN_AUTH_CONNECT  --servercert sha256:cca84f3585f647d4507276d3b714fb3868ed1bd27e33b6535652fd915818d34c" > connect-ceif.sh
 chmod +x connect-ceif.sh
 
 ##### Create VPN tunnel script #####
@@ -130,7 +134,7 @@ sudo dscl . -create /Users/admin911 RealName "admin911"
 sudo dscl . -create /Users/admin911 UniqueID "510"
 sudo dscl . -create /Users/admin911 PrimaryGroupID 80
 sudo dscl . -create /Users/admin911 NFSHomeDirectory /Users/admin911
-sudo dscl . -passwd /Users/admin911 ### Updated password here ###
+sudo dscl . -passwd /Users/admin911 $ADMIN911_PW
 sudo dscl . -append /Groups/admin GroupMembership admin911
 
 echo "admin911 account created, please reboot so admin privileges show correctly through the GUI"
