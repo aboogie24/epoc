@@ -142,4 +142,4 @@ sudo dscl . -create /Users/admin911 NFSHomeDirectory /Users/admin911
 sudo dscl . -passwd /Users/admin911 $ADMIN911_PW
 sudo dscl . -append /Groups/admin GroupMembership admin911
 
-echo "admin911 account created, please reboot so admin privileges show correctly through the GUI"
+echo "admin911 account created, you may need to reboot so admin privileges show correctly via the GUI"
