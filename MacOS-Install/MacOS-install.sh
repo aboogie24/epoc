@@ -2,6 +2,8 @@ VPN_AUTH_GROUP=###CHANGEME###
 VPN_AUTH_CONNECT=###CHANGEME###
 ADMIN911_PW=###CHANGEME###
 
+# Testing the contribution and merge state of this git repo
+
 # install homebrew #
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
