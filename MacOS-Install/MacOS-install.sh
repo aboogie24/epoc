@@ -23,9 +23,6 @@ cd ~/Downloads
 curl -L --remote-name https://zoom.us/client/latest/zoomusInstaller.pkg
 sudo installer -pkg zoomusInstaller.pkg -target /
 
-# install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 #om-darwin
 cd ~/Downloads
 om_type=darwin
@@ -142,4 +139,7 @@ sudo dscl . -create /Users/admin911 NFSHomeDirectory /Users/admin911
 sudo dscl . -passwd /Users/admin911 $ADMIN911_PW
 sudo dscl . -append /Groups/admin GroupMembership admin911
 
-echo "admin911 account created, please reboot so admin privileges show correctly through the GUI"
+echo "admin911 account created, you may need to reboot so admin privileges show correctly via the GUI"
+
+# install oh-my-zsh (drops you into zsh and you must exit)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
