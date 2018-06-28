@@ -19,7 +19,9 @@ Additionally, this project builds the scripts for specific VPN connection and sp
     - openconnect (version: latest)
     - tree (version: latest) 
     - mc-cli (version: latest)
-    - cf-cli (version: latest) 
+    - cf-cli (version: latest)
+    - iterm2
+    - zsh 
 
 ## Packages installed from github
     - fly (version: latest)
@@ -37,6 +39,7 @@ Additionally, this project builds the scripts for specific VPN connection and sp
     - Zoom (version: latest)
     - Google Chrome (version: latest)
     - Microsoft Visual Code (version: latest)
+    - Oh-My-Zsh
 
 ## Additional configuration
     - creates VPN connection script

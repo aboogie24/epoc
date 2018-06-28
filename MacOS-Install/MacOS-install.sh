@@ -2,8 +2,6 @@ VPN_AUTH_GROUP=###CHANGEME###
 VPN_AUTH_CONNECT=###CHANGEME###
 ADMIN911_PW=###CHANGEME###
 
-# Testing the contribution and merge state of this git repo
-
 # install homebrew #
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -14,6 +12,8 @@ brew install cloudfoundry/tap/credhub-cli
 brew install cloudfoundry/tap/bosh-cli
 brew install cloudfoundry/tap/cf-cli
 brew install homebrew/cask/powershell
+brew cask install iterm2
+brew install zsh
 brew install mas
 mas install 715768417 803453959
 gem install cf-uaac
@@ -22,6 +22,9 @@ gem install cf-uaac
 cd ~/Downloads
 curl -L --remote-name https://zoom.us/client/latest/zoomusInstaller.pkg
 sudo installer -pkg zoomusInstaller.pkg -target /
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #om-darwin
 cd ~/Downloads
