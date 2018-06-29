@@ -75,18 +75,36 @@ then
     blueutil --power 1
     networksetup -setairportpower en0 on
 
+    /usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -bool TRUE
+
     /usr/bin/profiles remove -identifier mil.disa.STIG.Application_Restrictions.alacarte
     /usr/bin/profiles remove -identifier mil.disa.STIG.Restrictions.alacarte
 
     sudo osascript -e "set volume input volume 50" 
 elif [ "$1" == "disable" ]
 then
-    blueutil --power 0
-    networksetup -setairportpower en0 off
+    # closes V-75965 in a different way. #
+    # Reference: Apple OS X 10.12 Security Technical Implementation Guide #
+    blueutil --power 0 #
 
+    # closes V-75967 in a different way. #
+    # Reference: Apple OS X 10.12 Security Technical Implementation Guide #
+    networksetup -setairportpower en0 off
+    
+    # close V-75969 #       
+    # Reference: Apple OS X 10.12 Security Technical Implementation Guide #
+    /usr/bin/sudo /usr/bin/defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -bool FALSE 
+
+    # closes V-76051 #
+    # Reference: Apple OS X 10.12 Security Technical Implementation Guide #
+    # Please note that both profiles listed below are required to lockdown the camera. 
+    # Application Restriction prevents FaceTime to be accessed, Restrictions Policy disables the camera and other apps. However, both are required to lock down the camera functionality. #
     /usr/bin/profiles install -path ~/workspace/epoc/MacOS-Install/U_Apple_OS_X_10-12_V1R3_Mobile_Configuration_Files/U_Apple_OS_X_10-12_V1R3_STIG_Application_Restrictions_Policy.mobileconfig
     /usr/bin/profiles install -path ~/workspace/epoc/MacOS-Install/U_Apple_OS_X_10-12_V1R3_Mobile_Configuration_Files/U_Apple_OS_X_10-12_V1R3_STIG_Restrictions_Policy.mobileconfig    
 
+    # closes V-51323 #
+    # Reference: Apple OS X 10.8 (Mountain Lion) Workstation STIG #
+    # Please note that this finding was derived from an OLDER STIG check #
     sudo osascript -e "set volume input volume 0" 
 else
     echo "Incorrect argument, please enter enable or disable"
@@ -102,10 +120,10 @@ chmod +x connect-ceif.sh
 echo '# Add one IP to the list of split tunnel
 add_ip ()
 {
-	export CISCO_SPLIT_INC_${CISCO_SPLIT_INC}_ADDR=$1
-        export CISCO_SPLIT_INC_${CISCO_SPLIT_INC}_MASK=$2
-        export CISCO_SPLIT_INC_${CISCO_SPLIT_INC}_MASKLEN=$3
-        export CISCO_SPLIT_INC=$(($CISCO_SPLIT_INC + 1))
+    export CISCO_SPLIT_INC_${CISCO_SPLIT_INC}_ADDR=$1
+    export CISCO_SPLIT_INC_${CISCO_SPLIT_INC}_MASK=$2
+    export CISCO_SPLIT_INC_${CISCO_SPLIT_INC}_MASKLEN=$3
+    export CISCO_SPLIT_INC=$(($CISCO_SPLIT_INC + 1))
 }
 
 # Initialize empty split tunnel list
