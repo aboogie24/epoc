@@ -3,6 +3,7 @@ EPOC Repo
 
 # Install procedures
 ```
+Important! Ensure that you have accessed the Apple App Store before executing this script.
 1. Open terminal
 2. git clone https://github.com/jmcclenny-epoc/epoc.git
 3. cd epoc/MacOS-Install
