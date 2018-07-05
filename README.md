@@ -11,6 +11,9 @@ Important! Ensure that you have accessed the Apple App Store before executing th
         VPN_AUTH_GROUP
         VPN_AUTH_CONNECT
         ADMIN911_PW=
+5. ./MacOS-install.sh
+
+See below for individual script usage.
 ```
 This project is to provision tools on a MacBook OS for an EPOC Platform Operator that our team identified necessary for day-to-day ops.
 
@@ -66,12 +69,6 @@ To Do:
 
 - - -
 
-#### Usage:
-```
-IMPORTANT! 
-Update the MacOS-install.sh with the password for the admin911 account
-./MacOS-install.sh ---- The MacBook must be rebooted inorder for the admin911 account to reflect as admin.
-```
 #### VPN Usage:
 ```
 IMPORTANT! 
