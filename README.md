@@ -1,6 +1,16 @@
 # epoc
 EPOC Repo
 
+# Install procedures
+```
+1. Open terminal
+2. git clone https://github.com/jmcclenny-epoc/epoc.git
+3. cd epoc/MacOS-Install
+4. vi MacOS-Install.sh update the following variables:
+        VPN_AUTH_GROUP
+        VPN_AUTH_CONNECT
+        ADMIN911_PW=
+```
 This project is to provision tools on a MacBook OS for an EPOC Platform Operator that our team identified necessary for day-to-day ops.
 
 Additionally, this project builds the scripts for specific VPN connection and splitting. As well as compliance for disabling specific functions of the MacBook to bring into secure facilities.
