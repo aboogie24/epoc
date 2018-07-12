@@ -65,7 +65,7 @@ Additionally, this project builds the scripts for specific VPN connection and sp
 - - -
 
 To Do:
-- [] TBD
+- [] Replace mas install of Slack with brew
 
 - - -
 
