@@ -12,10 +12,10 @@ brew install cloudfoundry/tap/credhub-cli
 brew install cloudfoundry/tap/bosh-cli
 brew install cloudfoundry/tap/cf-cli
 brew install homebrew/cask/powershell
+brew install homebrew/cask-versions/slack-beta
+brew cask install microsoft-remote-desktop-beta
 brew cask install iterm2
 brew install zsh
-brew install mas
-mas install 715768417 803453959
 gem install cf-uaac
 
 # install zoom #
@@ -112,7 +112,7 @@ fi' > rc-compliance.sh
 chmod +x rc-compliance.sh
 
 ##### Create VPN connect script #####
-cd ~/workspace
+cd ~/
 echo "sudo openconnect --authgroup $VPN_AUTH_GROUP --script=~/vpnc-script-split-traffic.sh   $VPN_AUTH_CONNECT  --servercert sha256:cca84f3585f647d4507276d3b714fb3868ed1bd27e33b6535652fd915818d34c" > connect-ceif.sh
 chmod +x connect-ceif.sh
 
