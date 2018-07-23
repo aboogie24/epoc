@@ -6,7 +6,8 @@ ADMIN911_PW=###CHANGEME###
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install apps from homebrew #
-brew install blueutil openconnect tmux watch tree jq 
+brew install blueutil openconnect tmux watch tree jq
+brew cask install spectacle
 brew install minio/stable/mc
 brew install cloudfoundry/tap/credhub-cli
 brew install cloudfoundry/tap/bosh-cli
