@@ -10,7 +10,7 @@ Important! Ensure that you have accessed the Apple App Store before executing th
 4. vi MacOS-Install.sh update the following variables:
         VPN_AUTH_GROUP
         VPN_AUTH_CONNECT
-        ADMIN911_PW=
+        ADMIN911_PW
 5. ./MacOS-install.sh
 
 See below for individual script usage.
@@ -22,8 +22,7 @@ Additionally, this project builds the scripts for specific VPN connection and sp
 ## Programs installed to make my life easier
     - Homebrew (version: latest)
 
-## Packages installed with homebrew:  
-    - mas (version: latest)  
+## Packages installed with homebrew:   
     - tmux (version: latest)  
     - jq (version: latest)  
     - blueutil (version: latest) 
@@ -34,8 +33,11 @@ Additionally, this project builds the scripts for specific VPN connection and sp
     - tree (version: latest) 
     - mc-cli (version: latest)
     - cf-cli (version: latest)
-    - iterm2
-    - zsh 
+    - iterm2 (version: latest)
+    - slack (version: latest)
+    - spectacle (version: latest)
+    - microsoft remote dekstop (version: latest)
+    - zsh (version: latest)
 
 ## Packages installed from github
     - fly (version: latest)
@@ -44,10 +46,6 @@ Additionally, this project builds the scripts for specific VPN connection and sp
         
 ## Packages installed with gem
     - cf-uaac (version: latest)
-
-## Packages installed from AppleStore
-    - Microsoft Remote Desktop 8 (version: latest)
-    - Slack (version: latest)
 
 ## Packages installed from curl
     - Zoom (version: latest)
