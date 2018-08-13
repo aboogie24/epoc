@@ -51,14 +51,14 @@ Additionally, this project builds the scripts for specific VPN connection and sp
     - Zoom (version: latest)
     - Google Chrome (version: latest)
     - Microsoft Visual Code (version: latest)
-    - Oh-My-Zsh
+    - Oh-My-Zsh (version: latest)
 
 ## Additional configuration
     - creates VPN connection script
     - creates VPN split script
     - creates MacBook compliance script
     - creates admin911 administrator account
-    - creates the workspace directory in the user home director (~/workspace))
+    - creates the workspace directory in the user home directory (~/workspace))
       
 - - -
 
